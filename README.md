@@ -5,9 +5,9 @@ The objective of this application is to create a popular game called space invad
 
 The game has the following features
 
+- [ ] Difficulty level (The number of monsters can be changed)
 - [ ] Player has lives
+- [ ] High score
 - [ ] Player can move to the left or right
 - [ ] Player can shoot bullets
 - [ ] The monsters are moving and shooting bullets
-- [ ] High score
-- [ ] Difficulty level (The number of monsters can be changed)
