@@ -1,5 +1,3 @@
-# OOAD-project
-
 Project Title: Space Invaders
 
 Team Members:
