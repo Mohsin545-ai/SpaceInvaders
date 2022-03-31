@@ -2,12 +2,12 @@ package com.zetcode;
 
 public interface Commons {
 
-    int BOARD_WIDTH = 358;
-    int BOARD_HEIGHT = 350;
+    int BOARD_WIDTH = 1500;//358;
+    int BOARD_HEIGHT = 900;//350;
     int BORDER_RIGHT = 30;
     int BORDER_LEFT = 5;
 
-    int GROUND = 290;
+    int GROUND = BOARD_HEIGHT - 100;//290;
     int BOMB_HEIGHT = 5;
 
     int ALIEN_HEIGHT = 12;
@@ -18,7 +18,7 @@ public interface Commons {
     int GO_DOWN = 15;
     int NUMBER_OF_ALIENS_TO_DESTROY = 24;
     int CHANCE = 5;
-    int DELAY = 17;
+    int DELAY = 6;
     int PLAYER_WIDTH = 15;
     int PLAYER_HEIGHT = 10;
 }

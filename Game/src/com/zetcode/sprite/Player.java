@@ -16,7 +16,7 @@ public class Player extends Sprite {
 
     private void initPlayer() {
 
-        var playerImg = "../images/player.png";
+        var playerImg = "./images/player.png";
         var ii = new ImageIcon(playerImg);
 
         width = ii.getImage().getWidth(null);
@@ -25,7 +25,7 @@ public class Player extends Sprite {
         int START_X = 270;
         setX(START_X);
 
-        int START_Y = 280;
+        int START_Y = Commons.GROUND -10;//280;
         setY(START_Y);
     }
 
