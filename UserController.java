@@ -1,16 +1,14 @@
-package Controller;
+package login;
 
-import Model.Database;
-import Model.User;
-import View.Form;
-import View.UserDetails;
+// import login.Model.Database;
+// import login.Model.User;
+// import login.View.Form;
+// import login.View.UserDetails;
 
 import javax.swing.*;
 import java.io.File;
 
 public class UserController {
-    // database file
-    private String databaseFile = "src\\data\\database.txt";
     private Database database;
     private Form form;
     private UserDetails userDetails;

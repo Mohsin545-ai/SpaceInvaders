@@ -1,4 +1,4 @@
-package Model;
+package com.zetcode.login;
 
 import java.io.*;
 import java.sql.*;

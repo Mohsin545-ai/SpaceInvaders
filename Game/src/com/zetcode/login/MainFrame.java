@@ -1,8 +1,8 @@
-package View;
+package com.zetcode.login;
 
-import Controller.UserController;
-import Model.Database;
-import Model.User;
+// import Controller.UserController;
+// import Model.Database;
+// import Model.User;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
         setLayout(cardLayout);
 
         // initialize user controller
-        new UserController(form, userDetails);
+        // new UserController(form, userDetails);
 
         // adds view to card layout with unique constraints
         add(form, "form");

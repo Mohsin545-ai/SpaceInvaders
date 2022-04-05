@@ -1,4 +1,4 @@
-package View;
+package com.zetcode.login;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

@@ -1,5 +1,4 @@
-package Model;
-
+package com.zetcode.login;
 public class User {
     private String name;
     private String password;
