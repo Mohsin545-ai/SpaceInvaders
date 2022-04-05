@@ -1,8 +1,8 @@
 package com.zetcode;
-
+import java.awt.event.*;
 import javax.swing.SwingUtilities;
 
-public class Leaderboard {
+public class Leaderboard implements ActionListener{
 
 	public static void ShowLeaderboard() {
 		SwingUtilities.invokeLater(new Runnable() {
@@ -15,9 +15,14 @@ public class Leaderboard {
 			}
 		});
 	}
-
 	public static void startApplication() throws Exception {
+	// public static View startApplication() throws Exception {
 		Model model = new Model();
 		new View(model);
+		// return new View(model);
 	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		ShowLeaderboard();
+	}	
 }

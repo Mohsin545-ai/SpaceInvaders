@@ -43,7 +43,7 @@ public class View {
 
 		// Display it all in a scrolling window and make the window appear
 		JFrame frame = new JFrame("Space Invaders Leaderboard");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(splitPane);
 		frame.pack();
 		frame.setLocationRelativeTo(null);
