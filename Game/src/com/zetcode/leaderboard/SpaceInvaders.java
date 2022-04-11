@@ -1,8 +1,11 @@
-package com.zetcode;
+package com.zetcode.leaderboard;
 
 import java.awt.EventQueue;
 // import javax.swing.JFrame;
-import javax.swing.*;  
+import javax.swing.*;
+
+import com.zetcode.Commons;
+
 import java.awt.event.*;
 
 public class SpaceInvaders extends JFrame implements ActionListener {

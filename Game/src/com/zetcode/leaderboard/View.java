@@ -1,4 +1,4 @@
-package com.zetcode;
+package com.zetcode.leaderboard;
 
 import java.awt.Dimension;
 
@@ -11,6 +11,8 @@ import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+
+import com.zetcode.Commons;
 
 public class View {
 
@@ -34,7 +36,7 @@ public class View {
 		ctrlPane.add(filterButton);
 
 		JScrollPane tableScrollPane = new JScrollPane(table);
-		tableScrollPane.setPreferredSize(new Dimension(1000, 1000));
+		tableScrollPane.setPreferredSize(new Dimension(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT));
 		tableScrollPane.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Gamers", TitledBorder.CENTER, TitledBorder.TOP));
 
 		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, ctrlPane, tableScrollPane);

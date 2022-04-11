@@ -1,4 +1,4 @@
-package com.zetcode;
+package com.zetcode.leaderboard;
 import java.awt.event.*;
 import javax.swing.SwingUtilities;
 

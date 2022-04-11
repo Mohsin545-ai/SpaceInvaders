@@ -1,5 +1,6 @@
-package com.zetcode;
+package com.zetcode.leaderboard;
 
+import com.zetcode.Commons;
 import com.zetcode.sprite.Alien;
 import com.zetcode.sprite.Player;
 import com.zetcode.sprite.Shot;

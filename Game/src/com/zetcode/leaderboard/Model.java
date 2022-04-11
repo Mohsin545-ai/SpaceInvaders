@@ -1,11 +1,13 @@
-package com.zetcode;
+package com.zetcode.leaderboard;
 
 
 import javax.swing.table.DefaultTableModel;
 
+import com.zetcode.database.Database;
+
 @SuppressWarnings("serial")
 public class Model extends DefaultTableModel {
 	public Model() {
-		super(ModelDb.getData(), ModelDb.getCols());
+		super(Database.getData(), Database.getCols());
 	}
 }

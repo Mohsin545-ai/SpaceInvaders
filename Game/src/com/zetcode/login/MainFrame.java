@@ -5,6 +5,9 @@ package com.zetcode.login;
 // import Model.User;
 
 import javax.swing.*;
+
+import com.zetcode.database.Database;
+
 import java.awt.*;
 
 public class MainFrame extends JFrame {
@@ -38,8 +41,7 @@ public class MainFrame extends JFrame {
 
             // simple validations
             if(name.isEmpty()) {
-                JOptionPane.showMessageDialog(form, "First Name Required.", "Error",
-                        JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(form, "First Name Required.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             } else if(password.isEmpty()) {
                 JOptionPane.showMessageDialog(form, "Last Name Required.", "Error",

@@ -1,24 +1,54 @@
-package com.zetcode.login;
+package com.zetcode.database;
 
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Database {
+import com.zetcode.login.User;
 
-    private final String url = "jdbc:postgresql://localhost/space_invaders";
-    private final String user = "postgres";
-    private final String password = "Mohsin7@";
+public class Database {
+    private static Object[] TABLE_HEADER = {"Player Name", "High Score"};
+
+    private static String url = "jdbc:postgresql://localhost:5432/spaceinvaders";//"jdbc:postgresql://localhost/space_invaders";
+    private static String user = "postgres";
+    private static String password = "mihir";//"Mohsin7@";
 
     private ArrayList<User> userArrayList;
 
     public Database() {
         userArrayList = new ArrayList<>();
     }
-
-    public Connection connect() throws SQLException {
+    
+    public static Connection connect() throws SQLException {
         return DriverManager.getConnection(url, user, password);
     }
+
+    public static Object[][] getData(){
+		ArrayList<Object[]> temp = new ArrayList<Object[]>();
+		try (Connection connection = connect()) {
+			System.out.println("Connected to PostgreSQL database!");
+			
+			Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM gamers");
+			
+			while (resultSet.next()) {
+				Object[] t = new Object[2]; 
+				t[0] = resultSet.getString("player_name");
+				t[1] = resultSet.getString("high_score");
+				temp.add(t);
+            }
+        }
+		catch (SQLException e) {
+			System.out.println("Connection failure!");
+            e.printStackTrace();
+        }
+		Object[][] ans = new Object[temp.size()][2];
+		for(int i=0; i<temp.size(); i++){
+			ans[i] = temp.get(i);
+		}
+		return ans;
+	}
+
 
 
     // adds user to our collection
@@ -143,5 +173,8 @@ public class Database {
         return arr;
     }
 
+    public static Object[] getCols(){
+		return TABLE_HEADER;
+	}
 
 }

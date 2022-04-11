@@ -1,10 +1,13 @@
-package com.zetcode;
+package com.zetcode.leaderboard;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+import com.zetcode.database.Database;
+
 import javax.swing.JOptionPane;
 
 public class Controller implements ActionListener {
@@ -23,8 +26,8 @@ public class Controller implements ActionListener {
 
 		String searchTerm = searchTermTextField.getText();
 		if (searchTerm != null && !"".equals(searchTerm)) {
-			Object[][] data = ModelDb.getData();
-			Object[] cols = ModelDb.getCols();
+			Object[][] data = Database.getData();
+			Object[] cols = Database.getCols();
 
 			Object[][] newData = new Object[data.length][];
 			int idx = 0;
