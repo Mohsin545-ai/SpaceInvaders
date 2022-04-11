@@ -157,6 +157,8 @@ public class Board extends JPanel {
             }
 
             gameOver(g);
+            Model model = new Model();
+		    new View(model);
         }
 
         Toolkit.getDefaultToolkit().sync();

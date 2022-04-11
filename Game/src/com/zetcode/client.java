@@ -1,8 +1,8 @@
 package com.zetcode;
 
-import com.zetcode.leaderboard.Leaderboard;
-import com.zetcode.leaderboard.SpaceInvaders;
+import com.zetcode.leaderboard.*;
 import com.zetcode.login.App;
+
 
 // import javax.swing.JFrame;
 import javax.swing.*;
@@ -49,5 +49,19 @@ public class client extends JFrame{
         login.setBounds(200,300,400,40);
         f.add(login);
         login.addActionListener(new App());
+
+
+        // CardLayout cardLayout = new CardLayout();
+
+        // //Board game = new Board();
+        // SpaceInvaders game = new SpaceInvaders();
+        // f.setLayout(cardLayout);
+
+
+        // f.add(game,"game");
+
+        // f.setSize(Commons.BOARD_WIDTH,Commons.BOARD_HEIGHT);
+        // f.setDefaultCloseOperation(3);
+        // f.setVisible(true);   
     }
 }
