@@ -31,7 +31,7 @@ public class client extends JFrame{
     // public static void main(String[] args) {
     //     JFrame f = new JFrame();//creating instance of JFrame  
     //     f.setDefaultCloseOperation(3);
-    //     f.setSize(700,700);
+    //     f.setSize(Commons.BOARD_WIDTH,Commons.BOARD_HEIGHT);
     //     f.setLayout(null);
     //     f.setVisible(true);
               

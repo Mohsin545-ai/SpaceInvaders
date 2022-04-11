@@ -1,10 +1,9 @@
 package com.zetcode;
 import java.awt.*;
 public interface Commons {
-    // Dimension s = Toolkit.getDefaultToolkit().getScreenSize();
-
-    int BOARD_WIDTH = 750;//358;
-    int BOARD_HEIGHT = 450;//350;
+    Dimension s = Toolkit.getDefaultToolkit().getScreenSize();
+    int BOARD_WIDTH = (int)s.getWidth();//750;//358;
+    int BOARD_HEIGHT = (int)s.getHeight();//450;//350;
     int BORDER_RIGHT = 30;
     int BORDER_LEFT = 5;
 
