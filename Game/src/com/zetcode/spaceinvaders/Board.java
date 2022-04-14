@@ -1,4 +1,4 @@
-package com.zetcode.leaderboard;
+package com.zetcode.spaceinvaders;
 
 import com.zetcode.Commons;
 import com.zetcode.sprite.Alien;
@@ -142,8 +142,7 @@ public class Board extends JPanel {
 
         if (inGame) {
 
-            g.drawLine(0, Commons.GROUND,
-                    Commons.BOARD_WIDTH, Commons.GROUND);
+            g.drawLine(0, Commons.GROUND, Commons.BOARD_WIDTH, Commons.GROUND);
 
             drawAliens(g);
             drawPlayer(g);
@@ -177,8 +176,7 @@ public class Board extends JPanel {
 
         g.setColor(Color.white);
         g.setFont(small);
-        g.drawString(message, (Commons.BOARD_WIDTH - fontMetrics.stringWidth(message)) / 2,
-                Commons.BOARD_WIDTH / 2);
+        g.drawString(message, (Commons.BOARD_WIDTH - fontMetrics.stringWidth(message)) / 2, Commons.BOARD_WIDTH / 2);
     }
 
     private void update() {

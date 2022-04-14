@@ -6,33 +6,40 @@ package com.zetcode.login;
 
 import javax.swing.*;
 
+import com.zetcode.Commons;
 import com.zetcode.database.Database;
+import com.zetcode.spaceinvaders.*;
 
 import java.awt.*;
 
-public class MainFrame extends JFrame {
+public class MainFrame {//extends JFrame {
 
     // Card layout for switching view
-    private CardLayout cardLayout;
+    // private CardLayout cardLayout;
     private Database database;
-
+    
 
     public MainFrame() {
-        super("Java Swing MVC");
-        cardLayout = new CardLayout();
+        // size of our application frame
+        Commons.GameWindow.setSize(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
+        Commons.GameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Commons.GameWindow.setVisible(true);
+
+        // super("Java Swing MVC");
+        // cardLayout = new CardLayout();
         Form form = new Form();
         UserDetails userDetails = new UserDetails();
         this.database = new Database();
 
         // sets our layout as a card layout
-        setLayout(cardLayout);
+        Commons.GameWindow.setLayout(Commons.cardLayout);
 
         // initialize user controller
         // new UserController(form, userDetails);
 
         // adds view to card layout with unique constraints
-        add(form, "form");
-        add(userDetails, "user details");
+        Commons.GameWindow.add(form, "form");
+        Commons.GameWindow.add(userDetails, "user details");
         form.submitUsers(e -> userDetails.getUsers(this.database.loadUsers()));
         // switch view according to its constraints on click
         form.submitUsers(e -> {
@@ -44,8 +51,7 @@ public class MainFrame extends JFrame {
                 JOptionPane.showMessageDialog(form, "First Name Required.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             } else if(password.isEmpty()) {
-                JOptionPane.showMessageDialog(form, "Last Name Required.", "Error",
-                        JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(form, "Last Name Required.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -59,12 +65,11 @@ public class MainFrame extends JFrame {
 //                            JOptionPane.showMessageDialog(this.form, "Login successfull.", "Sucess",
 //                                    JOptionPane.ERROR_MESSAGE);
 
-                            cardLayout.show(MainFrame.this.getContentPane(), "user details");
+                            Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "user details");
                             return;
 
                         } else {
-                            JOptionPane.showMessageDialog(form, "Invalid password.", "Error",
-                                    JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(form, "Invalid password.", "Error", JOptionPane.ERROR_MESSAGE);
                             return;
                         }
                     }
@@ -78,20 +83,9 @@ public class MainFrame extends JFrame {
 
 
 
+        form.viewUsers(new StartGame());
+        // form.viewUsers(e -> Commons.cardLayout.show(MainFrame.this.getContentPane(), "user details"));
 
-        form.viewUsers(e -> cardLayout.show(MainFrame.this.getContentPane(), "user details"));
-
-        userDetails.backButton(e -> cardLayout.show(MainFrame.this.getContentPane(), "form"));
-
-        // icon for our application
-        ImageIcon imageIcon = new ImageIcon("src/assets/appicon.png");
-        setIconImage(imageIcon.getImage());
-        // frame width & height
-        int FRAME_WIDTH = 1200;
-        int FRAME_HEIGHT = 700;
-        // size of our application frame
-        setSize(FRAME_WIDTH, FRAME_HEIGHT);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+        userDetails.backButton(e -> Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "form"));
     }
 }
