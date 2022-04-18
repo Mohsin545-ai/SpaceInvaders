@@ -19,7 +19,7 @@ public class SpaceInvaders extends JFrame {
     private void initUI() {
         setTitle("Space Invaders");
         setSize(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
-        // setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 

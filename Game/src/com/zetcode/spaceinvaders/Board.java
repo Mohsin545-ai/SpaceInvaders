@@ -1,9 +1,8 @@
 package com.zetcode.spaceinvaders;
 
 import com.zetcode.Commons;
-import com.zetcode.sprite.Alien;
-import com.zetcode.sprite.Player;
-import com.zetcode.sprite.Shot;
+import com.zetcode.sprite.*;
+import com.zetcode.leaderboard.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -156,8 +155,12 @@ public class Board extends JPanel {
             }
 
             gameOver(g);
-            Model model = new Model();
-		    new View(model);
+            // Model model = new Model();
+		    // new View(model);
+            // Leaderboard scores = new Leaderboard();
+            // Commons.scores.startApplication();
+            Commons.GameWindow.setVisible(true);
+            Commons.spaceInvadersWindow.setVisible(false);
         }
 
         Toolkit.getDefaultToolkit().sync();

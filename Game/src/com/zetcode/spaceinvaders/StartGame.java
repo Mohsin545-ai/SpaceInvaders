@@ -8,8 +8,10 @@ import java.awt.event.*;
 public class StartGame implements ActionListener{
     public void play(){
         SwingUtilities.invokeLater(() -> {
-            var ex = new SpaceInvaders();
-            ex.setVisible(true);
+            // var ex = new SpaceInvaders();
+            // ex.setVisible(true);
+            // Commons.spaceInvadersWindow = new SpaceInvaders();
+            Commons.spaceInvadersWindow.setVisible(true);
         });
     }
 
@@ -17,6 +19,6 @@ public class StartGame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Commons.GameWindow.setVisible(false);
         play();
-        Commons.GameWindow.setVisible(true);
+       // Commons.GameWindow.setVisible(true);
     }
 }

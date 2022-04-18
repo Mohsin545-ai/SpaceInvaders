@@ -15,7 +15,7 @@ public class Leaderboard implements ActionListener{
 			}
 		});
 	}
-	public static void startApplication() throws Exception {
+	public static void startApplication(){// throws Exception {
 	// public static View startApplication() throws Exception {
 		Model model = new Model();
 		new View(model);

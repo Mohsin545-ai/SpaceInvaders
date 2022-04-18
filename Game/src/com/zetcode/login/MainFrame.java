@@ -9,6 +9,7 @@ import javax.swing.*;
 import com.zetcode.Commons;
 import com.zetcode.database.Database;
 import com.zetcode.spaceinvaders.*;
+import com.zetcode.leaderboard.*;
 
 import java.awt.*;
 
@@ -61,11 +62,14 @@ public class MainFrame {//extends JFrame {
                 String[][] users = this.database.loadUsers();
                 for (String[] row : users) {
                     if (row[0].compareTo(name) == 0) {
-                        if (row[0].compareTo(password) == 0) {
+
+                        if (row[1].compareTo(password) == 0) {
 //                            JOptionPane.showMessageDialog(this.form, "Login successfull.", "Sucess",
 //                                    JOptionPane.ERROR_MESSAGE);
 
-                            Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "user details");
+                            //Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "user details");
+                            Commons.GameWindow.setVisible(false);
+                            new StartGame().play();
                             return;
 
                         } else {
@@ -74,16 +78,19 @@ public class MainFrame {//extends JFrame {
                         }
                     }
                 }
-            } {
+            } else {
                 System.out.println("hello in else");
                 this.database.saveUser();
-                form.reset(true);
+                
             }
+
+            form.reset(true);
         });
 
 
 
-        form.viewUsers(new StartGame());
+        form.viewUsers(new Leaderboard());
+        //form.viewUsers(Commons.GameWindow.setVisible(false));
         // form.viewUsers(e -> Commons.cardLayout.show(MainFrame.this.getContentPane(), "user details"));
 
         userDetails.backButton(e -> Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "form"));

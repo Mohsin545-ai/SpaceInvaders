@@ -11,7 +11,7 @@ public class Database {
 
     private static String url = "jdbc:postgresql://localhost:5432/spaceinvaders";//"jdbc:postgresql://localhost/space_invaders";
     private static String user = "postgres";
-    private static String password = "mihir";//"Mohsin7@";
+    private static String password = "mohsin";//"mihir";
 
     private ArrayList<User> userArrayList;
 
