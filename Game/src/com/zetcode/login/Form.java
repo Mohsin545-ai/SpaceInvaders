@@ -9,8 +9,7 @@ public class Form extends JPanel {
     private JTextField name;
     private JTextField password;
 
-    private JButton addButton;
-    private JButton viewButton;
+    private JButton Login;
 
     public Form() {
 
@@ -20,10 +19,8 @@ public class Form extends JPanel {
         name = new JTextField(25);
         password = new JTextField(25);
 
-        addButton = new JButton("Add User");
-        addButton.setPreferredSize(new Dimension(278, 40));
-        viewButton = new JButton("View All Users");
-        viewButton.setPreferredSize(new Dimension(278, 40));
+        Login = new JButton("Login");
+        Login.setPreferredSize(new Dimension(278, 40));
 
         // space between fields
         Insets fieldsInset = new Insets(0, 0, 10, 0);
@@ -62,13 +59,7 @@ public class Form extends JPanel {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.insets = buttonInset;
 
-        add(addButton, gridBagConstraints);
-
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.insets = buttonInset;
-
-        add(viewButton, gridBagConstraints);
+        add(Login, gridBagConstraints);
     }
 
     // getters
@@ -80,13 +71,13 @@ public class Form extends JPanel {
         return password.getText();
     }
 
-    public void submitUsers(ActionListener actionListener) {
-        addButton.addActionListener(actionListener);
+    public void login(ActionListener actionListener) {
+        Login.addActionListener(actionListener);
     }
 
-    public void viewUsers(ActionListener actionListener) {
-        viewButton.addActionListener(actionListener);
-    }
+    // public void viewUsers(ActionListener actionListener) {
+    //     viewButton.addActionListener(actionListener);
+    // }
 
     // reset fields
     public void reset(boolean bln) {

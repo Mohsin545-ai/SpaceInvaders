@@ -159,7 +159,7 @@ public class Board extends JPanel {
 		    // new View(model);
             // Leaderboard scores = new Leaderboard();
             // Commons.scores.startApplication();
-            Commons.GameWindow.setVisible(true);
+            // Commons.GameWindow.setVisible(true);
             Commons.spaceInvadersWindow.setVisible(false);
         }
 

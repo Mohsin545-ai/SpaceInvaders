@@ -10,6 +10,7 @@ import com.zetcode.Commons;
 import com.zetcode.database.Database;
 import com.zetcode.spaceinvaders.*;
 import com.zetcode.leaderboard.*;
+import com.zetcode.homepage.*;
 
 import java.awt.*;
 
@@ -29,7 +30,7 @@ public class MainFrame {//extends JFrame {
         // super("Java Swing MVC");
         // cardLayout = new CardLayout();
         Form form = new Form();
-        UserDetails userDetails = new UserDetails();
+        // UserDetails userDetails = new UserDetails();
         this.database = new Database();
 
         // sets our layout as a card layout
@@ -40,10 +41,10 @@ public class MainFrame {//extends JFrame {
 
         // adds view to card layout with unique constraints
         Commons.GameWindow.add(form, "form");
-        Commons.GameWindow.add(userDetails, "user details");
-        form.submitUsers(e -> userDetails.getUsers(this.database.loadUsers()));
+        // Commons.GameWindow.add(userDetails, "user details");
+        // form.submitUsers(e -> userDetails.getUsers(this.database.loadUsers()));
         // switch view according to its constraints on click
-        form.submitUsers(e -> {
+        form.login(e -> {
             String name = form.getFirstname().trim();
             String password = form.getLastname().trim();
 
@@ -69,7 +70,8 @@ public class MainFrame {//extends JFrame {
 
                             //Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "user details");
                             Commons.GameWindow.setVisible(false);
-                            new StartGame().play();
+                            // new StartGame().play();
+                            new HomePage();
                             return;
 
                         } else {
@@ -89,10 +91,10 @@ public class MainFrame {//extends JFrame {
 
 
 
-        form.viewUsers(new Leaderboard());
+        //form.viewUsers(new Leaderboard());
         //form.viewUsers(Commons.GameWindow.setVisible(false));
         // form.viewUsers(e -> Commons.cardLayout.show(MainFrame.this.getContentPane(), "user details"));
 
-        userDetails.backButton(e -> Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "form"));
+        
     }
 }

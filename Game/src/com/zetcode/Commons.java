@@ -26,6 +26,7 @@ public interface Commons {
     int PLAYER_HEIGHT = 10;
     
     JFrame GameWindow = new JFrame();
+    JFrame HomeWindow = new JFrame();
     CardLayout cardLayout = new CardLayout();
     JFrame spaceInvadersWindow = new SpaceInvaders();
 }
