@@ -11,7 +11,7 @@ public class Database {
 
     private static String url = "jdbc:postgresql://localhost:5432/spaceinvaders";//"jdbc:postgresql://localhost/space_invaders";
     private static String user = "postgres";
-    private static String password = "mohsin";//"mihir";
+    private static String password = "mihir";//"mohsin";
 
     private ArrayList<User> userArrayList;
 
@@ -29,12 +29,12 @@ public class Database {
 			System.out.println("Connected to PostgreSQL database!");
 			
 			Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM gamers");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM player");
 			
 			while (resultSet.next()) {
 				Object[] t = new Object[2]; 
-				t[0] = resultSet.getString("player_name");
-				t[1] = resultSet.getString("high_score");
+				t[0] = resultSet.getString("name");
+				t[1] = resultSet.getString("highscore");
 				temp.add(t);
             }
         }

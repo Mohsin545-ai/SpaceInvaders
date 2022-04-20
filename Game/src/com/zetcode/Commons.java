@@ -2,7 +2,6 @@ package com.zetcode;
 import java.awt.*;
 import javax.swing.*;
 import com.zetcode.spaceinvaders.*;
-import com.zetcode.leaderboard.*;
 public interface Commons {
     Dimension s = Toolkit.getDefaultToolkit().getScreenSize();
     int BOARD_WIDTH = (int)s.getWidth();//750;//358;
@@ -27,6 +26,7 @@ public interface Commons {
     
     JFrame GameWindow = new JFrame();
     JFrame HomeWindow = new JFrame();
+    JFrame Leaderboard = new JFrame("Space Invaders Leaderboard");
     CardLayout cardLayout = new CardLayout();
     JFrame spaceInvadersWindow = new SpaceInvaders();
 }

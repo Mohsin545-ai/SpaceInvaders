@@ -2,6 +2,9 @@ package com.zetcode.leaderboard;
 import java.awt.event.*;
 import javax.swing.SwingUtilities;
 
+import com.zetcode.Commons;
+import com.zetcode.handleframes;
+
 public class Leaderboard implements ActionListener{
 
 	public static void ShowLeaderboard() {
@@ -23,6 +26,7 @@ public class Leaderboard implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		handleframes.closeWindow(Commons.HomeWindow);
 		ShowLeaderboard();
 	}	
 }

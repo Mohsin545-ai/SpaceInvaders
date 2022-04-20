@@ -1,6 +1,7 @@
 package com.zetcode.spaceinvaders;
 
 import com.zetcode.Commons;
+import com.zetcode.handleframes;
 import com.zetcode.sprite.*;
 import com.zetcode.leaderboard.*;
 
@@ -108,7 +109,6 @@ public class Board extends JPanel {
     private void drawShot(Graphics g) {
 
         if (shot.isVisible()) {
-
             g.drawImage(shot.getImage(), shot.getX(), shot.getY(), this);
         }
     }
@@ -160,7 +160,8 @@ public class Board extends JPanel {
             // Leaderboard scores = new Leaderboard();
             // Commons.scores.startApplication();
             // Commons.GameWindow.setVisible(true);
-            Commons.spaceInvadersWindow.setVisible(false);
+            handleframes.closeWindow(Commons.spaceInvadersWindow);
+            handleframes.showWindow(Commons.HomeWindow);
         }
 
         Toolkit.getDefaultToolkit().sync();

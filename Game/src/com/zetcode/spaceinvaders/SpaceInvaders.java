@@ -4,10 +4,8 @@ package com.zetcode.spaceinvaders;
 import javax.swing.*;
 
 import com.zetcode.Commons;
-import com.zetcode.login.*;
 
 import java.awt.*;
-import java.awt.event.*;
 
 public class SpaceInvaders extends JFrame {
 

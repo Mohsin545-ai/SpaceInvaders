@@ -4,12 +4,8 @@ package com.zetcode.homepage;
 import javax.swing.*;
 
 import com.zetcode.Commons;
-import com.zetcode.database.Database;
 import com.zetcode.spaceinvaders.*;
 import com.zetcode.leaderboard.*;
-import com.zetcode.homepage.*;
-
-import java.awt.*;
 
 public class HomePage {
     

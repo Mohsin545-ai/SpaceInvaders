@@ -2,6 +2,7 @@ package com.zetcode.spaceinvaders;
 import javax.swing.*;
 
 import com.zetcode.Commons;
+import com.zetcode.handleframes;
 
 import java.awt.event.*;
 
@@ -11,13 +12,14 @@ public class StartGame implements ActionListener{
             // var ex = new SpaceInvaders();
             // ex.setVisible(true);
             // Commons.spaceInvadersWindow = new SpaceInvaders();
-            Commons.spaceInvadersWindow.setVisible(true);
+            handleframes.showWindow(Commons.spaceInvadersWindow);
         });
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        Commons.GameWindow.setVisible(false);
+        // Commons.GameWindow.setVisible(false);
+        handleframes.closeWindow(Commons.HomeWindow);
         play();
        // Commons.GameWindow.setVisible(true);
     }
