@@ -7,6 +7,7 @@ package com.zetcode.login;
 import javax.swing.*;
 
 import com.zetcode.Commons;
+import com.zetcode.handleframes;
 import com.zetcode.database.Database;
 import com.zetcode.homepage.*;
 
@@ -65,9 +66,10 @@ public class MainFrame {//extends JFrame {
 //                                    JOptionPane.ERROR_MESSAGE);
 
                             //Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "user details");
-                            Commons.GameWindow.setVisible(false);
+                            // Commons.GameWindow.setVisible(false);
+                            handleframes.closeWindow(Commons.GameWindow);
                             // new StartGame().play();
-                            new HomePage();
+                            new HomePage(name);
                             return;
 
                         } else {

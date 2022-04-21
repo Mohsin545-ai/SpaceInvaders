@@ -73,7 +73,7 @@ public class Database {
         try {
             // user model
             User user = null;
-            String save_data = "";
+            // String save_data = "";
 
 //            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
             int i = 0;
@@ -83,8 +83,7 @@ public class Database {
                 i++;
             }
 
-            String SQL = "INSERT INTO player "
-                    + "VALUES(?,?)";
+            String SQL = "INSERT INTO player " + "VALUES(?,?)";
             try (
                     Connection conn = connect();
                     PreparedStatement statement = conn.prepareStatement(SQL);) {
@@ -177,4 +176,17 @@ public class Database {
 		return TABLE_HEADER;
 	}
 
+    public static void updateScore(String name){
+        String sqlUpdate = "update player set highscore = highscore + 1 where name=" + "'" + name + "'" + ";";
+        try (Connection connection = connect()) {
+            
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sqlUpdate);
+			System.out.println("Connected to PostgreSQL database and sucessfully updated score!");
+        }
+		catch (SQLException e) {
+			System.out.println("Connection failure!");
+            e.printStackTrace();
+        }
+    }
 }

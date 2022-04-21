@@ -2,21 +2,16 @@ package com.zetcode.spaceinvaders;
 
 import com.zetcode.Commons;
 import com.zetcode.handleframes;
+import com.zetcode.database.Database;
+import com.zetcode.homepage.HomePage;
 import com.zetcode.sprite.*;
-import com.zetcode.leaderboard.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -160,7 +155,8 @@ public class Board extends JPanel {
             // Leaderboard scores = new Leaderboard();
             // Commons.scores.startApplication();
             // Commons.GameWindow.setVisible(true);
-            handleframes.closeWindow(Commons.spaceInvadersWindow);
+            // handleframes.closeWindow(Commons.spaceInvadersWindow);
+            Commons.spaceInvadersWindow.dispose();
             handleframes.showWindow(Commons.HomeWindow);
         }
 
@@ -192,6 +188,7 @@ public class Board extends JPanel {
             inGame = false;
             timer.stop();
             message = "Game won!";
+            HomePage.increaseScore();
         }
 
         // player

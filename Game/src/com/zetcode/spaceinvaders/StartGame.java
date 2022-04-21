@@ -18,6 +18,7 @@ public class StartGame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        // Commons.spaceInvadersWindow = new JFrame();
         // Commons.GameWindow.setVisible(false);
         handleframes.closeWindow(Commons.HomeWindow);
         play();

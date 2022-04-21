@@ -1,5 +1,6 @@
 package com.zetcode;
 
+import com.zetcode.database.Database;
 import com.zetcode.leaderboard.Leaderboard;
 import com.zetcode.login.*;
 import com.zetcode.spaceinvaders.*;
