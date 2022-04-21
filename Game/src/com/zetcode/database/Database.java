@@ -11,7 +11,7 @@ public class Database {
 
     private static String url = "jdbc:postgresql://localhost:5432/spaceinvaders";//"jdbc:postgresql://localhost/space_invaders";
     private static String user = "postgres";
-    private static String password = "mihir";//"mohsin";
+    private static String password = "mohsin";//"mihir";
 
     private ArrayList<User> userArrayList;
 
@@ -24,6 +24,7 @@ public class Database {
     }
 
     public static Object[][] getData(){
+
 		ArrayList<Object[]> temp = new ArrayList<Object[]>();
 		try (Connection connection = connect()) {
 			System.out.println("Connected to PostgreSQL database!");
@@ -37,6 +38,8 @@ public class Database {
 				t[1] = resultSet.getString("highscore");
 				temp.add(t);
             }
+
+            connection.close();
         }
 		catch (SQLException e) {
 			System.out.println("Connection failure!");
@@ -101,7 +104,7 @@ public class Database {
                 // execute every 100 rows or less
 
                 statement.executeBatch();
-
+                conn.close();
 
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
@@ -139,6 +142,7 @@ public class Database {
              ResultSet rs = stmt.executeQuery(SQL)) {
             // display actor information
             data = displayActor(rs);
+            conn.close();
             return data;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -183,6 +187,7 @@ public class Database {
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlUpdate);
 			System.out.println("Connected to PostgreSQL database and sucessfully updated score!");
+            connection.close();
         }
 		catch (SQLException e) {
 			System.out.println("Connection failure!");

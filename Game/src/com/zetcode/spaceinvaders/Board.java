@@ -32,6 +32,7 @@ public class Board extends JPanel {
     private String message = "Game Over";
 
     private Timer timer;
+    private boolean win = false;
 
 
     public Board() {
@@ -155,9 +156,15 @@ public class Board extends JPanel {
             // Leaderboard scores = new Leaderboard();
             // Commons.scores.startApplication();
             // Commons.GameWindow.setVisible(true);
-            // handleframes.closeWindow(Commons.spaceInvadersWindow);
-            Commons.spaceInvadersWindow.dispose();
+             handleframes.closeWindow(Commons.spaceInvadersWindow);
+           // Commons.spaceInvadersWindow.dispose();
+           
+               HomePage.increaseScore();
+          
+           
+           Commons.spaceInvadersWindow = new SpaceInvaders();
             handleframes.showWindow(Commons.HomeWindow);
+            
         }
 
         Toolkit.getDefaultToolkit().sync();
@@ -185,10 +192,11 @@ public class Board extends JPanel {
 
         if (deaths == Commons.NUMBER_OF_ALIENS_TO_DESTROY) {
 
+            win = true;
             inGame = false;
             timer.stop();
             message = "Game won!";
-            HomePage.increaseScore();
+            //HomePage.increaseScore();
         }
 
         // player
