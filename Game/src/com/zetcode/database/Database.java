@@ -11,7 +11,8 @@ public class Database {
 
     private static String url = "jdbc:postgresql://localhost:5432/spaceinvaders";//"jdbc:postgresql://localhost/space_invaders";
     private static String user = "postgres";
-    private static String password = "mohsin";//"mihir";
+    private static String passwordMihir = "mihir";
+    private static String passwordMohsin = "mohsin";
 
     private ArrayList<User> userArrayList;
 
@@ -20,7 +21,12 @@ public class Database {
     }
     
     public static Connection connect() throws SQLException {
-        return DriverManager.getConnection(url, user, password);
+        try{
+            return DriverManager.getConnection(url, user, passwordMohsin);
+        }
+        catch(SQLException e){
+            return DriverManager.getConnection(url, user, passwordMihir);
+        }
     }
 
     public static Object[][] getData(){

@@ -20,6 +20,7 @@ public class StartGame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         // Commons.spaceInvadersWindow = new JFrame();
         // Commons.GameWindow.setVisible(false);
+        Commons.spaceInvadersWindow = new SpaceInvaders();
         handleframes.closeWindow(Commons.HomeWindow);
         play();
        // Commons.GameWindow.setVisible(true);

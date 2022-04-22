@@ -62,8 +62,7 @@ public class MainFrame {//extends JFrame {
                     if (row[0].compareTo(name) == 0) {
 
                         if (row[1].compareTo(password) == 0) {
-//                            JOptionPane.showMessageDialog(this.form, "Login successfull.", "Sucess",
-//                                    JOptionPane.ERROR_MESSAGE);
+                        //    JOptionPane.showMessageDialog(this.form, "Login successfull.", "Sucess", JOptionPane.ERROR_MESSAGE);
 
                             //Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "user details");
                             // Commons.GameWindow.setVisible(false);

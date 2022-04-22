@@ -2,7 +2,6 @@ package com.zetcode.spaceinvaders;
 
 import com.zetcode.Commons;
 import com.zetcode.handleframes;
-import com.zetcode.database.Database;
 import com.zetcode.homepage.HomePage;
 import com.zetcode.sprite.*;
 
@@ -32,7 +31,6 @@ public class Board extends JPanel {
     private String message = "Game Over";
 
     private Timer timer;
-    private boolean win = false;
 
 
     public Board() {
@@ -46,7 +44,7 @@ public class Board extends JPanel {
         addKeyListener(new TAdapter());
         setFocusable(true);
         d = new Dimension(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
-        setBackground(Color.black);
+        setBackground(Color.PINK);
 
         timer = new Timer(Commons.DELAY, new GameCycle());
         timer.start();
@@ -62,8 +60,7 @@ public class Board extends JPanel {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
 
-                var alien = new Alien(Commons.ALIEN_INIT_X + 18 * j,
-                        Commons.ALIEN_INIT_Y + 18 * i);
+                var alien = new Alien(Commons.ALIEN_INIT_X + 18 * j, Commons.ALIEN_INIT_Y + 18 * i);
                 aliens.add(alien);
             }
         }
@@ -131,7 +128,7 @@ public class Board extends JPanel {
 
     private void doDrawing(Graphics g) {
 
-        g.setColor(Color.black);
+        g.setColor(Color.PINK);
         g.fillRect(0, 0, d.width, d.height);
         g.setColor(Color.green);
 
@@ -156,13 +153,8 @@ public class Board extends JPanel {
             // Leaderboard scores = new Leaderboard();
             // Commons.scores.startApplication();
             // Commons.GameWindow.setVisible(true);
-             handleframes.closeWindow(Commons.spaceInvadersWindow);
+            handleframes.closeWindow(Commons.spaceInvadersWindow);
            // Commons.spaceInvadersWindow.dispose();
-           
-               HomePage.increaseScore();
-          
-           
-           Commons.spaceInvadersWindow = new SpaceInvaders();
             handleframes.showWindow(Commons.HomeWindow);
             
         }
@@ -172,7 +164,7 @@ public class Board extends JPanel {
 
     private void gameOver(Graphics g) {
 
-        g.setColor(Color.black);
+        g.setColor(Color.PINK);
         g.fillRect(0, 0, Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
 
         g.setColor(new Color(0, 32, 48));
@@ -192,11 +184,10 @@ public class Board extends JPanel {
 
         if (deaths == Commons.NUMBER_OF_ALIENS_TO_DESTROY) {
 
-            win = true;
             inGame = false;
             timer.stop();
             message = "Game won!";
-            //HomePage.increaseScore();
+            HomePage.increaseScore();
         }
 
         // player

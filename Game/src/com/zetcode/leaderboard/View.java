@@ -29,6 +29,7 @@ public class View {
 			public void actionPerformed(ActionEvent e) {
 				handleframes.showWindow(Commons.HomeWindow);
 				handleframes.closeWindow(Commons.Leaderboard);
+				Commons.Leaderboard = new JFrame("Space Invaders Leaderboard");
 			}
 		}
 		);
