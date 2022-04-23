@@ -1,0 +1,1 @@
+create table player (name varchar(20), password varchar(20), highscore int default 0);
