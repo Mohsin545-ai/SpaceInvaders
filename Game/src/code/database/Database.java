@@ -7,32 +7,19 @@ import code.login.User;
 
 public class Database {
     private static Object[] TABLE_HEADER = {"Player Name", "High Score"};
-
-    private static String url = "jdbc:postgresql://localhost:5432/spaceinvaders";//"jdbc:postgresql://localhost/space_invaders";
-    private static String user = "postgres";
-    private static String passwordMihir = "mihir";
-    private static String passwordMohsin = "mohsin";
+    
+    private static Connection connection = sqldb.connect();
 
     private ArrayList<User> userArrayList;
 
     public Database() {
         userArrayList = new ArrayList<>();
     }
-    
-    public static Connection connect() throws SQLException {
-        try{
-            return DriverManager.getConnection(url, user, passwordMohsin);
-        }
-        catch(SQLException e){
-            return DriverManager.getConnection(url, user, passwordMihir);
-        }
-    }
 
     public static Object[][] getData(){
 
 		ArrayList<Object[]> temp = new ArrayList<Object[]>();
-		try (Connection connection = connect()) {
-			System.out.println("Connected to PostgreSQL database!");
+		try {
 			
 			Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM player");
@@ -44,7 +31,7 @@ public class Database {
 				temp.add(t);
             }
 
-            connection.close();
+            
         }
 		catch (SQLException e) {
 			System.out.println("Connection failure!");
@@ -63,7 +50,7 @@ public class Database {
     public boolean addUser(User user) {
 
         if (userArrayList.size() == 0) {
-            System.out.println("empty");
+            // System.out.println("empty");
         }
         String[][] users = this.loadUsers();
 
@@ -93,15 +80,14 @@ public class Database {
 
             String SQL = "INSERT INTO player " + "VALUES(?,?)";
             try (
-                    Connection conn = connect();
-                    PreparedStatement statement = conn.prepareStatement(SQL);) {
+                PreparedStatement statement = connection.prepareStatement(SQL);) {
 
 
 
-               if (user != null) {
-                   statement.setString(1, user.getName());
-                   statement.setString(2, user.getPassword());
-               }
+                if (user != null) {
+                    statement.setString(1, user.getName());
+                    statement.setString(2, user.getPassword());
+                }
 
 
                 statement.addBatch();
@@ -109,7 +95,7 @@ public class Database {
                 // execute every 100 rows or less
 
                 statement.executeBatch();
-                conn.close();
+                // conn.close();
 
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
@@ -142,12 +128,12 @@ public class Database {
 
         String SQL = "SELECT * FROM player";
         String[][] data;
-        try (Connection conn = connect();
-             Statement stmt = conn.createStatement();
+        try (
+             Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(SQL)) {
             // display actor information
             data = displayActor(rs);
-            conn.close();
+            // conn.close();
             return data;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -174,9 +160,7 @@ public class Database {
         }
 
 
-        String[][] arr = data.stream()
-                .map(l -> l.stream().toArray(String[]::new))
-                .toArray(String[][]::new);
+        String[][] arr = data.stream().map(l -> l.stream().toArray(String[]::new)).toArray(String[][]::new);
 
         return arr;
     }
@@ -187,12 +171,12 @@ public class Database {
 
     public static void updateScore(String name){
         String sqlUpdate = "update player set highscore = highscore + 1 where name=" + "'" + name + "'" + ";";
-        try (Connection connection = connect()) {
+        try {
             
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlUpdate);
 			System.out.println("Connected to PostgreSQL database and sucessfully updated score!");
-            connection.close();
+            
         }
 		catch (SQLException e) {
 			System.out.println("Connection failure!");

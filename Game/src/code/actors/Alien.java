@@ -1,4 +1,4 @@
-package code.sprite;
+package code.actors;
 
 import javax.swing.ImageIcon;
 

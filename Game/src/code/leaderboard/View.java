@@ -54,7 +54,7 @@ public class View {
 		Commons.Leaderboard.add(splitPane);
 		Commons.Leaderboard.pack();
 		Commons.Leaderboard.setLocationRelativeTo(null);
-		Commons.Leaderboard.setVisible(true);
+		handleframes.showWindow(Commons.Leaderboard);
 	}
 }
 

@@ -3,7 +3,7 @@ package code.spaceinvaders;
 import code.Commons;
 import code.handleframes;
 import code.homepage.HomePage;
-import code.sprite.*;
+import code.actors.*;
 
 import javax.swing.*;
 import java.awt.Color;

@@ -4,6 +4,7 @@ package code.homepage;
 import javax.swing.*;
 
 import code.Commons;
+import code.handleframes;
 import code.database.Database;
 import code.spaceinvaders.*;
 import code.leaderboard.*;
@@ -17,7 +18,7 @@ public class HomePage {
         // size of our application frame
         Commons.HomeWindow.setSize(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
         Commons.HomeWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Commons.HomeWindow.setVisible(true);
+        handleframes.showWindow(Commons.HomeWindow);
 
         HomeForm form = new HomeForm();
 

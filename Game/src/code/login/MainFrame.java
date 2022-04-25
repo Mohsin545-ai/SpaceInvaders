@@ -22,7 +22,7 @@ public class MainFrame {//extends JFrame {
         // size of our application frame
         Commons.GameWindow.setSize(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
         Commons.GameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Commons.GameWindow.setVisible(true);
+        handleframes.showWindow(Commons.GameWindow);
 
         // super("Java Swing MVC");
         // cardLayout = new CardLayout();
@@ -56,12 +56,13 @@ public class MainFrame {//extends JFrame {
 
 
             if (this.database.addUser(new User(name, password))) {
-                System.out.println("Hello");
+                // System.out.println("Hello");
                 String[][] users = this.database.loadUsers();
                 for (String[] row : users) {
                     if (row[0].compareTo(name) == 0) {
 
                         if (row[1].compareTo(password) == 0) {
+                            JOptionPane.showMessageDialog(form, "Successfully logged in!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         //    JOptionPane.showMessageDialog(this.form, "Login successfull.", "Sucess", JOptionPane.ERROR_MESSAGE);
 
                             //Commons.cardLayout.show(Commons.GameWindow.getContentPane(), "user details");
@@ -78,7 +79,8 @@ public class MainFrame {//extends JFrame {
                     }
                 }
             } else {
-                System.out.println("hello in else");
+                // System.out.println("hello in else");
+                JOptionPane.showMessageDialog(form, "Successfully registered!", "Registered", JOptionPane.INFORMATION_MESSAGE);
                 this.database.saveUser();
                 
             }
@@ -86,12 +88,8 @@ public class MainFrame {//extends JFrame {
             form.reset(true);
         });
 
-
-
         //form.viewUsers(new Leaderboard());
         //form.viewUsers(Commons.GameWindow.setVisible(false));
         // form.viewUsers(e -> Commons.cardLayout.show(MainFrame.this.getContentPane(), "user details"));
-
-        
     }
 }
