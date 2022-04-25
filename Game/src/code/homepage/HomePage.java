@@ -16,7 +16,8 @@ public class HomePage {
     public HomePage(String gamerName) {
         playerName = gamerName;
         // size of our application frame
-        Commons.HomeWindow.setSize(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
+        handleframes.setSize(Commons.HomeWindow);
+        
         Commons.HomeWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         handleframes.showWindow(Commons.HomeWindow);
 

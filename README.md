@@ -22,4 +22,5 @@ The game has the following features for now.
 <br><br><br>
 Design patterns<br>
 - Creational DP: Singleton (for database instance)
+- Structural DP: facade (for handling frames)
 

@@ -20,7 +20,7 @@ public class MainFrame {//extends JFrame {
 
     public MainFrame() {
         // size of our application frame
-        Commons.GameWindow.setSize(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
+        handleframes.setSize(Commons.GameWindow);
         Commons.GameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         handleframes.showWindow(Commons.GameWindow);
 
@@ -72,7 +72,8 @@ public class MainFrame {//extends JFrame {
                             new HomePage(name);
                             return;
 
-                        } else {
+                        } 
+                        else {
                             JOptionPane.showMessageDialog(form, "Invalid password.", "Error", JOptionPane.ERROR_MESSAGE);
                             return;
                         }
