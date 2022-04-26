@@ -4,8 +4,8 @@ import javax.swing.*;
 import code.spaceinvaders.*;
 public class Commons {
     public static Dimension s = Toolkit.getDefaultToolkit().getScreenSize();
-    public static int BOARD_WIDTH = (int)s.getWidth();//750;//358;
-    public static int BOARD_HEIGHT = (int)s.getHeight();//450;//350;
+    public static int BOARD_WIDTH = (int)s.getWidth();
+    public static int BOARD_HEIGHT = (int)s.getHeight();
     public static int BORDER_RIGHT = 30;
     public static int BORDER_LEFT = 5;
 
@@ -18,7 +18,11 @@ public class Commons {
     public static int ALIEN_INIT_Y = 5;
     
     public static int GO_DOWN = 15;
-    public static int NUMBER_OF_ALIENS_TO_DESTROY = 1;
+
+    public static int NUMBER_OF_ALIENS_COLS = 5;
+    public static int NUMBER_OF_ALIENS_ROWS = 5;
+    public static int NUMBER_OF_ALIENS_TO_DESTROY = 1; // NUMBER_OF_ALIENS_COLS * NUMBER_OF_ALIENS_ROWS;
+    
     public static int CHANCE = 5;
     public static int DELAY = 6;
     public static int PLAYER_WIDTH = 15;
