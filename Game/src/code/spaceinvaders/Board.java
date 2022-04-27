@@ -151,6 +151,7 @@ public class Board extends JPanel {
             // Leaderboard scores = new Leaderboard();
             // Commons.scores.startApplication();
             // Commons.GameWindow.setVisible(true);
+            JOptionPane.showMessageDialog(Commons.HomeWindow,"You lost the Game!", "Lost", JOptionPane.INFORMATION_MESSAGE);
             handleframes.closeWindow(Commons.spaceInvadersWindow);
            // Commons.spaceInvadersWindow.dispose();
             handleframes.showWindow(Commons.HomeWindow);
@@ -185,6 +186,7 @@ public class Board extends JPanel {
             inGame = false;
             timer.stop();
             message = "Game won!";
+            JOptionPane.showMessageDialog(Commons.HomeWindow,"You won the Game!", "Success", JOptionPane.INFORMATION_MESSAGE);
             HomePage.increaseScore();
         }
 
@@ -273,6 +275,7 @@ public class Board extends JPanel {
                 if (y > Commons.GROUND - Commons.ALIEN_HEIGHT) {
                     inGame = false;
                     message = "Invasion!";
+                    JOptionPane.showMessageDialog(Commons.HomeWindow,"You lost the Game!", "Lost", JOptionPane.INFORMATION_MESSAGE);
                 }
 
                 alien.act(direction);

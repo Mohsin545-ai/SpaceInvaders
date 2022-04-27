@@ -21,7 +21,7 @@ public class Commons {
 
     public static int NUMBER_OF_ALIENS_COLS = 5;
     public static int NUMBER_OF_ALIENS_ROWS = 5;
-    public static int NUMBER_OF_ALIENS_TO_DESTROY = 1; // NUMBER_OF_ALIENS_COLS * NUMBER_OF_ALIENS_ROWS;
+    public static int NUMBER_OF_ALIENS_TO_DESTROY = NUMBER_OF_ALIENS_COLS * NUMBER_OF_ALIENS_ROWS;
     
     public static int CHANCE = 5;
     public static int DELAY = 6;

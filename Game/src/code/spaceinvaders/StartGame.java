@@ -39,6 +39,7 @@ class UserInput{
 
         Commons.NUMBER_OF_ALIENS_ROWS = Integer.parseInt(parts[0]);
         Commons.NUMBER_OF_ALIENS_COLS = Integer.parseInt(parts[1]);
+        Commons.NUMBER_OF_ALIENS_TO_DESTROY = Commons.NUMBER_OF_ALIENS_COLS * Commons.NUMBER_OF_ALIENS_ROWS;
     }
 
 }
